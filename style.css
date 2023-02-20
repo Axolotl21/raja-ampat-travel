@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Rancho&display=swap');
+
+:root {
+    --water: #094b65;
+    --sky: #fff;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.header {
+    width: 100%;
+    height: 15vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+    background-color: var(--sky);
+}
+
+.header .logo {
+    color: var(--water);
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+    z-index: -1;
+}
+
+.header nav {
+    transition: all 0.3s linear;
+}
+
+.header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.3s linear;
+}
+
+.header i {
+    display: none;
+    background-color: var(--water);
+    color: var(--sky);
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 6px 10px;
+    z-index: 1;
+}
+
+.header i.active {
+    color: var(--water);
+    background-color: var(--sky);
+}
+
+.header ul li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: var(--water);
+    padding: 6px 15px;
+    transition: all 0.2s linear;
+}
+
+.header ul li a:hover, 
+.header ul li a.active {
+   color: var(--sky);
+   background-color: var(--water);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#hero {
+    width: 100%;
+    height: 100vh;
+}
+
+#hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#hero img:is(#bird1, #bird2){
+    z-index: 11;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--water), transparent);
+    z-index: 2;
+}
+
+#hero #text {
+    position: absolute;
+    color: var(--water);
+    font-size: 8rem;
+    text-align: center;
+    line-height: 0.55em;
+    font-family: 'Rancho', cursive;
+    transform: translateY(-50%);
+}
+
+#hero #text span {
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#diving {
+    background-color: var(--water);
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+#diving p:first-child {
+    font-size: 3rem;
+    color: var(--sky);
+    text-transform: capitalize;
+    text-align: center;
+}
+
+#diving img {
+    max-width: 100%;
+}
+
+#destination, #clients, #blogs {
+    padding: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#destination > div > p:first-child, 
+#clients > div > p:first-child,
+#blogs > div > p:first-child,
+.new-blog > div > p:first-child {
+    display: inline-block;
+    background-color: var(--water);
+    color: var(--sky);
+    padding: 5px;
+    margin-bottom: 10px
+}
+
+#destination div > p:last-child {
+    margin-bottom: 10px;
+}
+
+#destination-place {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#destination-place figure {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+}
+
+#destination-place figure img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+#destination-place figure figcaption p:first-child {
+    color: var(--water);
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+#destination-place figure:nth-child(even) {
+    flex-direction: column-reverse;
+}
+
+#destination-place figure:nth-child(even) p:last-child {
+    margin-bottom: 10px;
+}
+
+#clients #content-review {
+    display: flex;
+    justify-content: space-between;
+}
+
+#clients #content-review img{
+    width: 40%;
+    display: inline-block;
+    margin-right: 50px;
+    object-fit: cover;
+    object-position: 30% 30%;
+}
+
+#clients #reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#reviews .review {
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+#reviews .review:nth-child(2) {
+    background-color: var(--water);
+    margin-left: -30px;
+    color: var(--sky);
+}
+
+.review > p::before, .review > p::after {
+    content: " \" ";
+    font-family: 'Rancho', cursive;
+}
+
+.review span {
+    font-size: small;
+    font-style: italic;
+}
+
+.blog-contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.blog {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.blog a, a.news {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.blog a img, .news img{
+    width: 100%;
+}
+
+.blog:nth-child(2) a img{
+    display: none;
+}
+
+.blog a .date, .news .date{
+    font-size: small;
+    color: initial;
+}
+
+.blog a .title, .news .title{
+    font-size: larger;
+    color: var(--water);
+}
+
+.blog a .description, .news .description{
+    color: initial;
+    margin-bottom: 20px;
+}
+
+.blog a:hover .title, .news:hover .title{
+    text-decoration: underline;
+}
+
+.feature-blog {
+    margin-top: 15vh;
+}
+
+footer {
+    background-color: var(--water);
+    color: var(--sky);
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+footer :is(.social-media, .navigate, .support) {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.navigate {
+    padding-left: 150px;
+}
+
+.support {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+:is(.social-media, .navigate, .support) > p:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.fa-brands {
+    margin: 10px 20px 0 0;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+footer .navigate a {
+    text-decoration: none;
+    color: var(--sky);
+    font-size: 1rem;
+}
+
+footer .navigate a:hover {
+    font-size: 1.025rem;
+}
+
+/*Blogs html part*/
+.new-blog {
+    padding: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.new-blog-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/*Contac html part*/
+#contact {
+    margin-top: 15vh;
+    flex-direction: column;
+}
+
+#contact div:first-child p {
+    font-family: 'Rancho', cursive;
+    font-size: 3.5rem;
+    color: var(--water);
+}
+
+.form-contact {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    height: 500px;
+    padding: 15px;
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,0.2);
+}
+
+.form-contact div img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.form-contact #background-contact {
+    width: 40vw;
+    flex: 1;
+    background-image: url(assets/images/luggage.jpg);
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+
+.form-contact form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    position: relative;
+}
+
+.form-contact form :is(input, textarea) {
+    padding: .5rem;
+    display: block;
+    resize: vertical;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+
+.form-contact form label {
+    margin-left: 15px;
+    color: var(--water);
+}
+
+.form-contact form :is(input:focus, textarea:focus) {
+    outline: 2px solid var(--water);
+    border: none;
+}
+
+.form-contact form button {
+    background-color: var(--water);
+    color: var(--sky);
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: .5rem;
+}
+@media screen and (max-width: 1024px){
+    .header {
+        padding: 0 15px;
+    }
+
+    .header .logo {
+        font-size: 1.5rem;
+    }
+
+    .header ul li {
+        list-style-type: none;
+        margin-right: 10px;
+    }
+    
+    #hero :is(#bird1, #bird2) {
+        display: none;
+    }
+
+    #destination-place figure {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+
+    #destination-place figure img {
+        height: 250px;
+    }
+
+    #destination-place figure:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .blog-contents {
+        flex-direction: column;
+    }
+
+    .blog:nth-child(2) a img{
+        display: initial;
+    }
+
+    .review p {
+        font-size: small;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer :is(.social-media, .navigate, .support) {
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--sky);
+    }
+
+    .navigate {
+        padding-left: 0;
+    }
+
+    .support {
+        justify-content: initial;
+        align-items: initial;
+    }
+
+    .new-blog-container {
+        flex-direction: column;
+    }
+
+    #background-contact {
+        display: none;
+    }
+
+    .form-contact form {
+        width: 80vw;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .header nav ul {
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-evenly;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--water);
+        transform: translateY(-100%);
+    }
+
+    .header nav ul.slide {
+        transform: translateY(0);
+        transition: all 0.3s linear;
+    }
+
+    .header i {
+        display: block;
+    }
+
+    .header ul li a {
+        color: var(--sky);
+        padding: 0;
+    }
+
+    .header ul li a:hover, 
+    .header ul li a.active {
+        color: var(--sky);
+        background-color: transparent;
+        font-weight: 900;
+    }
+    
+    #hero #text { 
+        font-size: 4rem;
+    }
+
+    #diving p:first-child {
+        font-size: 1.5rem;
+        color: var(--sky);
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    #destination-place {
+        flex-direction: column;
+    }
+
+    #destination-place figure {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #destination-place figure:nth-child(even) {
+        flex-direction: column;
+    }
+
+    #destination-place figure figcaption p:last-child {
+        margin-bottom: 25px;
+    }
+
+    #reviews .review {
+        font-size: 0.8rem;
+        padding: 5px;
+        margin: 10px 0;
+    }
+
+    .blog-contents {
+        flex-direction: column;
+    }
+
+    .blog:nth-child(2) a img{
+        display: initial;
+    }
+
+}
