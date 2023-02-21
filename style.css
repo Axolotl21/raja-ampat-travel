@@ -362,16 +362,23 @@ footer .navigate a:hover {
     margin-right: 20px;
 }
 
-/*Contac html part*/
-#contact {
+/*Contact and about html part*/
+#contact, #about, #destination {
     margin-top: 15vh;
     flex-direction: column;
 }
 
-#contact div:first-child p {
+#contact > div:first-child p,
+#about > div:first-child p,
+#about > div:nth-child(3) p {
     font-family: 'Rancho', cursive;
     font-size: 3.5rem;
     color: var(--water);
+}
+
+#about > div:nth-child(2) {
+    padding: 0px 20px;
+    text-align: center;
 }
 
 .form-contact {
@@ -435,6 +442,82 @@ footer .navigate a:hover {
     left: 0;
     padding: .5rem;
 }
+
+#vision-mission-container {
+    margin-top: 20px;
+    text-align: center;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.vision-mission {
+    display: flex;
+    justify-content: center;
+}
+
+.vision-mission div {
+    width: 400px;
+    background-color: var(--water);
+    color: var(--sky);
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.vision-mission div:hover, .vision-mission div.active {
+    opacity: 1;
+}
+
+.vision p {
+    color: var(--water);
+    font-size: 1.5rem !important;
+    text-align: left;
+    font-family: 'Poppins', sans-serif !important;
+    margin-bottom: 20px;
+}
+
+.mission {
+    display: none;
+    margin-top: 40px;
+}
+
+.destination-place {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.destination-place a{
+    display: inline-block;
+    text-decoration: none;
+    flex: 1 1 30vw;
+    margin-right: 20px;
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,0.2);
+    padding: 10px;
+    color: var(--water);
+    transition: all 0.2s linear;
+    margin-bottom: 30px;
+}
+
+.destination-place a:hover .packet {
+    text-decoration: underline;
+}
+
+.destination-place a:hover {
+    box-shadow: 2px 8px 30px 0 rgba(0,0,0,0.4);
+}
+
+.destination-place a img {
+    width: 100%;
+}
+
+.destination-place a .price {
+    font-size: 1.25rem;
+}
+
 @media screen and (max-width: 1024px){
     .header {
         padding: 0 15px;
@@ -509,6 +592,29 @@ footer .navigate a:hover {
         width: 80vw;
     }
 
+    .vision-mission {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .vision-mission div {
+        width: 50vw;
+    }
+
+    .vision p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .mission p {
+        font-size: 3rem !important;
+    }
+
+    .destination-place a {
+        flex: 1 1 90vw;
+    }
 }
 
 @media screen and (max-width: 768px) {

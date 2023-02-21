@@ -1,9 +1,7 @@
 $(document).ready(function(){
-    let btnMenu = $("#btn-menu");
-    let menu = $(".header nav ul");
-    $(btnMenu).click(function(){
+    $("#btn-menu").click(function(){
         $(this).toggleClass("active");
-        $(menu).toggleClass("slide");
+        $(".header nav ul").toggleClass("slide");
     });
     $(window).scroll(function(){
         let value =  window.scrollY;
@@ -12,7 +10,6 @@ $(document).ready(function(){
         let bird2 = document.querySelector("#bird2");
         let rocks = document.querySelector("#rocks");
         let forest = document.querySelector("#forest");
-        let water = document.querySelector("#water");
         text.style.top = 30 + value * -0.5 + "%";
         bird1.style.top = value * -1.5 + "px";
         bird1.style.left = value * 2 + "px";
@@ -21,4 +18,19 @@ $(document).ready(function(){
         rocks.style.top = value * -0.12 + "px";
         forest.style.top = value * 0.25 + "px";
     });
+    $("#mission-btn").click(function(){
+        $(this).addClass("active");
+        $("#vision-btn").removeClass("active");
+        $(".vision").fadeOut(function(){
+            $(".mission").fadeIn();
+        });
+    });
+    $("#vision-btn").click(function(){
+        $(this).addClass("active");
+        $("#mission-btn").removeClass("active");
+        $(".mission").fadeOut(function(){
+            $(".vision").fadeIn();
+        });
+    });
+
 });
