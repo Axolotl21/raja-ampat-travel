@@ -615,6 +615,18 @@ footer .navigate a:hover {
     .destination-place a {
         flex: 1 1 90vw;
     }
+
+    #happy-customer {
+        display: none !important;
+    }
+
+    #reviews .review:nth-child(2) {
+        margin-left: -10px;
+    }
+
+    #reviews .review {
+        margin-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -694,5 +706,4 @@ footer .navigate a:hover {
     .blog:nth-child(2) a img{
         display: initial;
     }
-
 }
